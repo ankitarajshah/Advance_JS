@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>function basic</title>
+
+</head>
+<body>
+	<!--  function- block of code
+
+	function name(){
+	 ......code.....
+	} -->
+<script type="text/javascript">
+	//  function
+	function Name(){
+		console.log("My Name is Ankita Shah...");
+		}
+
+		Name(); //call of function
+
+	// function with parameter
+	function getfullName(fname,lname) {
+		// body...
+		console.log(`My name is ,${fname}`);
+		console.log(`My last name is ,${lname}`);
+	}
+	getfullName("Ankita","Shah");
+
+	//function with default para
+	function getfullName(fname,lname = "anki") {
+		// body...
+		console.log(`My name is ,${fname}`);
+		console.log(`My last name is ,${lname}`);
+	}
+	getfullName("Ankita")
+
+	// function with return keyword
+	function Mul(a,b) {
+
+		// body...
+		return a*b
+	}
+	console.log(Mul(2,6));
+</script>
+</body>
+</html>
