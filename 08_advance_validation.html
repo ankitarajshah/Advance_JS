@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return ValidData()" method ="post">
+        <table border="1" align="center">
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" name="name" id="name" onblur="ValidData(this,'NameError')" onkeydown="Alpha(this,'NError')">
+                    <span id = "NameError"></span>
+                    <span id ="NError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" name="email" id="email" onblur="ValidData(this,'EmailError')" onkeydown="EmailCheck(this,'EError')">
+                    <span id = "EmailError"></span>
+                    <span id = "EError"></span>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" name="pwd" id="pwd" onblur="ValidData(this,'pwdError')" onkeydown="PwdCheck(this,'PError')">
+                    <span id ="pwdError"></span>
+                    <span id = "PError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td>
+                    <input type="text" name="mobile" id="mobile" onblur="ValidData(this,'MobileError')" onkeyup="MobileCheck(this,'MError')">
+                    <span id ="MobileError"></span>
+                    <span id ="MError"></span>
+            
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function ValidData(e,spnid)
+        {
+            if(e.value == "")
+            {
+                document.getElementById(spnid).style.color="red";
+                document.getElementById(spnid).innerText = "Please Enter Data!";
+                return false;
+            }
+            else{
+                document.getElementById(spnid).innerText = "";
+            }
+        }
+
+        function Alpha(e,spnid)
+        {
+            var name = /^[a-zA-Z]+$/
+            if(name.test(e.value))
+            {
+                document.getElementById(spnid).innerText ="";
+            }
+            else{
+                document.getElementById(spnid).style.color="red";
+                document.getElementById(spnid).innerText = "Please Enter only characters!";
+                return false;
+            }
+        }
+        function EmailCheck(e,spnid)
+        {
+            var email = /^([a-z0-9.-_])+@([a-z0-9.-_])+\.([a-z]{2,3})+$/
+            if(email.test(e.value))
+            {
+                document.getElementById(spnid).innerText ="";
+            }
+            else{
+                document.getElementById(spnid).style.color="red";
+                document.getElementById(spnid).innerText = "Please Enter valid Email!";
+                return false;
+            }
+        }
+
+        function PwdCheck(e,spnid)
+        {
+            var pwd = /^[a-zA-Z0-9._-]{3,5}$/
+            if(pwd.test(e.value))
+            {
+                document.getElementById(spnid).innerText ="";
+            }
+            else{
+                document.getElementById(spnid).style.color="red";
+                document.getElementById(spnid).innerText = "Please Enter min 3 and max 5!";
+                return false;
+            }
+        }
+        function MobileCheck(e,spnid)
+        {
+            var mobile = /^[0-9]{10}$/
+            if(mobile.test(e.value))
+            {
+                document.getElementById(spnid).innerText ="";
+            }
+            else{
+                document.getElementById(spnid).style.color="red";
+                document.getElementById(spnid).innerText = "Please Enter 10 digit mobile number";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
