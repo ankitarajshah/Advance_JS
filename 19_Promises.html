@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const MyPro = new Promise((ha,na)=>{
+            var a = 5;
+            var b = 15;
+            if(a == b)
+            {
+                ha("Both Are equal");
+                // console.log("Both Are equal");
+            }
+            else
+            {
+                na("No Match found");
+                // console.log("No Match found");
+            }
+
+        }).then((res)=>{   //result
+            console.log(res);
+        }).catch((ErrorHndl)=>{ //error
+            console.log(ErrorHndl);
+        })
+    </script>
+</body>
+</html>
